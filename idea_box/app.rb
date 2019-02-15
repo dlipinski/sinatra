@@ -13,4 +13,8 @@ class IdeaBoxApp < Sinatra::Base
     get '/' do
         erb :index
     end
+
+    post '/' do
+        'Createing the idea!'
+    end
 end
