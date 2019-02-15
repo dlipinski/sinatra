@@ -1,6 +1,6 @@
 require 'active_record'
 
-Activeecord::Base.establishConnection({
+ActiveRecord::Base.establish_connection({
     database: 'finatra_db',
     adapter: 'sqlite3'
 })
