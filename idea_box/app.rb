@@ -17,7 +17,8 @@ class IdeaBoxApp < Sinatra::Base
     end
 
     post '/' do
-        idea = Idea.new
-        idea.save
+        params.inspect
+        #idea = Idea.new
+        #idea.save
     end
 end
