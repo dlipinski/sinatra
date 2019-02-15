@@ -1,6 +1,8 @@
 require 'bundler'
 Bundler.require
 
+require './idea'
+
 class IdeaBoxApp < Sinatra::Base
     configure :development do
         register Sinatra::Reloader
@@ -15,6 +17,7 @@ class IdeaBoxApp < Sinatra::Base
     end
 
     post '/' do
-        'Createing the idea!'
+        idea = Idea.new
+        idea.save
     end
 end
