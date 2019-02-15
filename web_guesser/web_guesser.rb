@@ -1,13 +1,26 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-
 set :number => rand(4)
 
-get '/' do    
+@@remaining_guesses = 5
+
+get '/' do
+
     guess = params['guess'].to_i
     locals = check_guess(guess)
-    erb :index, :locals => locals
+
+    @@remaining_guesses = @@remaining_guesses -1
+    if @@remaining_guesses <= 0
+        number = rand(4)
+        locals['remaining_guesses'] =  "Didn't guessed 5 times, generating new number."
+        @@remaining_guesses = 5
+    else
+        locals['remaining_guesses'] =  @@remaining_guesses.to_s + " chances left."
+    end
+
+    erb :index, :locals => locals 
+
 end
 
 def check_guess(guess)
@@ -24,6 +37,6 @@ def check_guess(guess)
             return {:message => "Too low!", :background => "lightcoral"}
         end
     else
-        return {:message => "Correct! The number is " + settings.number.to_s, :background => "green"}
+        return {:message => "Correct! The number is " + settings.number.to_s + "!", :background => "green"}
     end
 end
