@@ -2,5 +2,5 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 get '/' do
-    "Welocme to sinatra!"
+    erb :index, layout: :main
 end
