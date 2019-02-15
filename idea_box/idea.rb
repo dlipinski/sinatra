@@ -1,8 +1,15 @@
 class Idea
+    attr_reader :title, :description
+
+    def initialize(title, description)
+        @title = title
+        @description = description
+    end
+
     def save
         database.transaction do |db|
             db['ideas'] ||= []
-            db['ideas'] << {title: 'diet', description: 'pizza all te time'}
+            db['ideas'] << {title: title, description: title}
         end
     end
 
