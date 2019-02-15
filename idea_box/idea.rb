@@ -3,6 +3,7 @@ class Idea
         database.transaction do |db|
             db['ideas'] ||= []
             db['ideas'] << {title: 'diet', description: 'pizza all te time'}
+        end
     end
 
     def database
