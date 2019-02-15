@@ -11,3 +11,8 @@ get '/:fishname' do
     @fish = Fish.find_by(name: params[:fishname])
     erb :show, layout: :main
 end
+
+post '/' do
+    Fish.create!(params)
+    redirect '/'
+end
