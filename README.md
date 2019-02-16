@@ -1,5 +1,5 @@
 # sinatra
-Starting learning Ruby on Rails with Sinatra
+Starting learning Sinatra as introduction to Ruby on Rails
 
 Done some toutorials with examples, in this order:
 
