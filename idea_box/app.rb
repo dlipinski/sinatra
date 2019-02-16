@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 
 require './idea'
+require 'yaml/store'
 
 class IdeaBoxApp < Sinatra::Base
     configure :development do
