@@ -1,4 +1,6 @@
 class Idea
+    
+
     attr_reader :title, :description
 
     def self.all
@@ -10,6 +12,12 @@ class Idea
     def self.raw_ideas
         database.transaction do |db|
             db['ideas'] || []
+        end
+    end
+
+    def self.delete(position)
+        database.transaction do
+            database['ideas'].delete_at(position)
         end
     end
 
