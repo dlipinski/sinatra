@@ -1,0 +1,5 @@
+---
+ideas:
+- !ruby/hash:Sinatra::IndifferentHash
+  title: tit1
+  description: desc2
